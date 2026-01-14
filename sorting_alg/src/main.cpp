@@ -6,15 +6,12 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <signal.h>
-#include <thread>
 #include "sys/types.h"
 #include "sys/sysinfo.h"
-
-#include "helpers/FileLoader.hpp"
-#include <algorithm>
-#include <fstream>
 #include <thread>
 
+#include <algorithm>
+#include <fstream>
 
 void runWithTimeout(const char* program, int timeoutSeconds, const  std::string file, std::string type, std::string alg) {//type int 1 string 2
     pid_t pid = fork();
@@ -61,16 +58,13 @@ void setUp(std::string file){
 
 struct sysinfo memInfo;
 int main() {
-    std::vector<std::thread> threads;
-
 	std::vector<std::vector<std::string>> files= {
 {"./data_source/rando_1M_cela_cisla.txt","1"},
 {"./data_source/random_words_1M.txt","2"},
 {"./data_source/random_10M_interval.txt","3"},
 {"./data_source/random_integers_10M.txt","1"},
 {"./data_source/random_words_10M.txt","2"}};
-	std::vector<std::string> algs= {"bubble","insertion","merge","heap","quick","radix","selection",};
-
+	std::vector<std::string> algs= {"insertion","bubble","merge","heap","quick","radix","selection",};
  for (auto& alg : algs) {
         for (auto& filePair : files) {
                 const std::string& filePath = filePair[0];
@@ -78,7 +72,5 @@ int main() {
                 runWithTimeout("./sort_program", 3600, filePath, type, alg);
         }
     }
-
-	std::this_thread::sleep_for(std::chrono::seconds(1));
     return 0;
 }

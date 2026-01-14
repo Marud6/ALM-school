@@ -1,0 +1,27 @@
+On./data_source/rando_1M_cela_cisla.txt with merge Time: 1414.82 ms
+On./data_source/random_words_1M.txt with merge Time: 2931.94 ms
+On./data_source/random_10M_interval.txt with merge Time: 26602.7 ms
+On./data_source/random_integers_10M.txt with merge Time: 20079.7 ms
+On./data_source/random_words_10M.txt with merge Time: 44340.6 ms
+
+On./data_source/rando_1M_cela_cisla.txt with heap Time: 1324.63 ms
+On./data_source/random_words_1M.txt with heap Time: 1539.6 ms
+On./data_source/random_10M_interval.txt with heap Time: 40808.4 ms
+On./data_source/random_integers_10M.txt with heap Time: 24933.2 ms
+On./data_source/random_words_10M.txt with heap Time: 31883.3 ms
+
+On./data_source/rando_1M_cela_cisla.txt with quick Time: 778.689 ms
+On./data_source/random_words_1M.txt with quick Time: 315919 ms
+On./data_source/random_10M_interval.txt with quick Time: 10170.8 ms
+On./data_source/random_integers_10M.txt with quick Time: 7192.76 ms
+
+On./data_source/rando_1M_cela_cisla.txt with radix Time: 694.746 ms
+On./data_source/random_words_1M.txt with radix Time: 199.857 ms
+On./data_source/random_10M_interval.txt with radix Time: 3812.4 ms
+On./data_source/random_words_10M.txt with radix Time: 3384.03 ms
+
+On rando_1M_cela_cisla.txt with selection correctly done: 28,6459%
+
+Onrando_1M_cela_cisla.txt with bubble correctly done: 176581
+
+On./data_source/rando_1M_cela_cisla.txt with insertion Time: 3,427.66 s
