@@ -44,7 +44,7 @@ void setUp(std::string file){
  auto data = loadFromFile<std::string>("./data_source/"+file+".txt");
 	   std::cerr << data.size() << std::endl;
 
-	std::sort(data.begin(), data.end());
+    std::sort(data.begin(), data.end());
    std::ofstream outFile("./output/finished/finished-"+file+".txt");
     if (!outFile) {
         std::cerr << "Error opening file for writing!\n";
@@ -53,7 +53,6 @@ void setUp(std::string file){
     for (const auto& value : data) {
         outFile << value << '\n';
     }
-
 }
 
 struct sysinfo memInfo;

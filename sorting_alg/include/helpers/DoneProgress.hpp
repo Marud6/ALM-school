@@ -9,7 +9,7 @@ double progress(const std::vector<T>& checkpoint, const std::vector<T>& finished
     for (std::size_t i = 0; i < size; ++i) {
         if (finishedData[i] == checkpoint[i]) done++;
     }
-    return done;
+    return static_cast<int>((done * 100.0) / finishedData.size());
 }
 
 

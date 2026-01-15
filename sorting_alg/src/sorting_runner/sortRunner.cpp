@@ -54,7 +54,5 @@ if (terminating.load()) {
         return 1;
     }
 }
-
-
     return 0;
 }
