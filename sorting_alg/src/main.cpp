@@ -39,7 +39,6 @@ void runWithTimeout(const char* program, int timeoutSeconds, const  std::string 
 		return;
     }
 }
-
 void setUp(std::string file){
  auto data = loadFromFile<std::string>("./data_source/"+file+".txt");
 	   std::cerr << data.size() << std::endl;

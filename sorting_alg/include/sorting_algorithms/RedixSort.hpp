@@ -10,7 +10,6 @@
 
 extern std::atomic<bool> terminating;
 
-
 namespace RadixSort{
 
     // INTEGRAL TYPES

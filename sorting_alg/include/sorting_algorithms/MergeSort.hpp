@@ -36,7 +36,6 @@ private:
         mergeSort(arr, mid, right);
         merge(arr, left, mid, right);
     }
-
 public:
     static void sort(std::vector<T>& arr) {
         mergeSort(arr, 0, arr.size());

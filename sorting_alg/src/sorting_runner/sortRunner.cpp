@@ -42,7 +42,6 @@ if (terminating.load()) {
    		std::cout << "On"+ file+" with "+ alg +" correctly done: " << progress << " \n";
         return 1;
     }
-
 }
 if (type == 3) {
 	RunAlgorithms<float>(alg, file);

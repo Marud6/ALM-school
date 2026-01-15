@@ -18,7 +18,6 @@ double DoneProgress(std::string alg, std::string file, int type) {
         auto checkpoint = loadFromFile<int>("./output/not_finished/checkpoint-"+alg+"-"+file);
         auto finishedData = loadFromFile<int>("./output/finished/finished-"+file);
         return progress<int>(checkpoint,finishedData);
-
     }
     if (type == 2) {
         auto checkpoint = loadFromFile<std::string>("./output/not_finished/checkpoint-"+alg+"-"+file);
