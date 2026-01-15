@@ -15,6 +15,7 @@ template <typename T>
 int RunAlgorithms(std::string alg, std::string file) {
     currentArray<T> = std::make_unique<std::vector<T>>(loadFromFile<T>(file));
     auto& data = *currentArray<T>;
+    auto start = std::chrono::high_resolution_clock::now();
     if (alg == "selection")
         SelectionSort<T>::sort(data);
     else if (alg == "bubble")
@@ -28,16 +29,14 @@ int RunAlgorithms(std::string alg, std::string file) {
     else if (alg == "quick")
         QuickSort<T>::sort(data);
     else if (alg == "radix")
-        if constexpr (std::is_same_v<T, int>) {
-            RadixSort<T>::sort(data);
-        } else {
-            std::cerr << "RadixSort supported only for int\n";
-            return 1;
-        }
+        RadixSort::sort(data);
     else {
         std::cerr << "Unknown algorithm\n";
         return 1;
     }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> duration = end - start;
+    std::cout << "On"+ file+" with "+ alg +" Time: " << duration.count() << " ms\n";
     return 0;
 
 }

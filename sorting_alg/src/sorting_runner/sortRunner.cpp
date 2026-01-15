@@ -23,7 +23,6 @@ int main(int argc, char* argv[]) {
     std::string file = argv[1];
     int type = std::stoi(argv[2]);      // 1=int, 2= string 3 = float
     std::string alg = argv[3];          // alg name
-    auto start = std::chrono::high_resolution_clock::now();
 if (type == 1) {
 	RunAlgorithms<int>(alg, file);
     if (terminating.load()) {
@@ -56,8 +55,6 @@ if (terminating.load()) {
     }
 }
 
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> duration = end - start;
-    std::cout << "On"+ file+" with "+ alg +" Time: " << duration.count() << " ms\n";
+
     return 0;
 }

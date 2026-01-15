@@ -64,9 +64,13 @@ int main() {
 {"./data_source/random_10M_interval.txt","3"},
 {"./data_source/random_integers_10M.txt","1"},
 {"./data_source/random_words_10M.txt","2"}};
-	std::vector<std::string> algs= {"insertion","bubble","merge","heap","quick","radix","selection",};
+
+	std::vector<std::string> algs= {"selection","heap","quick","radix","bubble","insertion","merge",};
  for (auto& alg : algs) {
+     	std::cout << "Algorithm:"<<alg <<"\n";
+
         for (auto& filePair : files) {
+
                 const std::string& filePath = filePair[0];
                 const std::string& type     = filePair[1];
                 runWithTimeout("./sort_program", 3600, filePath, type, alg);
